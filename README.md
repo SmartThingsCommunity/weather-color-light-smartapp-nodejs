@@ -75,4 +75,4 @@ The concept of a SmartThings-connected color bulb that changes its color based u
 The [SmartThings Community](https://community.smartthings.com) has created several similar solutions, including:
 
 - [Color Changing Smart Weather Lamp](https://community.smartthings.com/t/color-changing-smart-weather-lamp-app/12046)
--[ColorCast - Color Changing Weather Lamp](https://community.smartthings.com/t/colorcast-color-changing-weather-lamp/13874)
+- [ColorCast - Color Changing Weather Lamp](https://community.smartthings.com/t/colorcast-color-changing-weather-lamp/13874)
