@@ -18,13 +18,15 @@ const commands = require('./lib/commands');
 const stConfig = require('./lib/config');
 const scheduling = require('./lib/scheduling');
 const weather = require('./lib/weather');
-
-const publicKey = fs.readFileSync('./config/smartthings_rsa.pub', 'utf8');
 const stApi = 'https://api.smartthings.com/v1';
 const prettyjsonOptions = {};
 const app = express();
 
 app.use(bodyParser.json());
+
+// UNCOMMENT THE FOLLOWING IN PRODUCTION
+// const publicKey = fs.readFileSync('./config/smartthings_rsa.pub', 'utf8');
+// END WARNING
 
 /**
 * Entry point for callbacks by SmartThings.
@@ -50,6 +52,11 @@ app.post('/', function (req, response) {
 * @returns true if verified, false otherwise.
 */
 function signatureIsVerified(req) {
+  // WARNING: DO NOT USE THIS IN PRODUCTION
+  // We will read the public key from FS everytime we need to verify
+  // COMMENT OUT THIS LINE INPRODUCTION
+  const publicKey = fs.readFileSync('./config/smartthings_rsa.pub', 'utf8');
+  // END WARNING
   try {
     let parsed = httpSignature.parseRequest(req);
     if (!httpSignature.verifySignature(parsed, publicKey)) {
