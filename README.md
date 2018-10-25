@@ -47,15 +47,11 @@ This WebHook SmartApp showcases:
 
 8. Click **CONFIRM** to register your automation in self-publishing mode.
 
-9. Stop the npm server: `CTRL-C`.
+9. Install the SmartApp in the SmartThings mobile app (go to Marketplace->SmartApps->My Apps->Example Weather Color Light.
 
-10. Start the server again: `npm start` (this ensures that the public key will be used to verify requests from SmartThings).
+10. Enter all required inputs on the configuration screens.
 
-11. Install the SmartApp in the SmartThings mobile app (go to Marketplace->SmartApps->My Apps->Example Weather Color Light.
-
-12. Enter all required inputs on the configuration screens.
-
-13. Once installed, the configured bulb will turn on and its color will either be purple (if precipitation is in the forecast), orange (if the forecast calls for temperatures above 80 degrees Fahrenheit), blue (if the forecast calls for temperatures below 50 degrees Fahrenheit), or white (if no precipitation and temperature between 50 and 80 degrees Fahrenheit). It will check the current weather at the interval set during installation.
+11. Once installed, the configured bulb will turn on and its color will either be purple (if precipitation is in the forecast), orange (if the forecast calls for temperatures above 80 degrees Fahrenheit), blue (if the forecast calls for temperatures below 50 degrees Fahrenheit), or white (if no precipitation and temperature between 50 and 80 degrees Fahrenheit). It will check the current weather at the interval set during installation.
 
 ## Troubleshooting
 
