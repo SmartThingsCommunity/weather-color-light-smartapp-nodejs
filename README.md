@@ -35,11 +35,9 @@ This WebHook SmartApp showcases:
 
 6. Go to the [Automation](https://devworkspace.developer.samsung.com/smartthingsconsole/iotweb/site/index.html#/development/automation) section of the Developer Workspace and create an Automation.
 	- For the **SmartApp Type** select **WebHook endpoint** and enter the https URL you copied from the above step.
-	- For the **Scope**, click on **Settings** and select the following scopes:
-		- `r:devices:*`,
-		- `x:devices:*`,
-		- `r:schedules`, and
-		- `w:schedules`
+	- For the **Scopes**, click on the **Add** button and select the following scopes:
+		- `r:devices:*`
+		- `x:devices:*`
 	- Click **SAVE AND NEXT**.
 	- In the next screen you will be presented with the **Public Key**.
 
