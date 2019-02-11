@@ -33,7 +33,8 @@ This WebHook SmartApp showcases:
 
 5. Start ngrok (in another terminal window/tab): `ngrok http 3005`. Copy the `https:` URL to your clipboard.
 
-6. Go to the [Automation](https://devworkspace.developer.samsung.com/smartthingsconsole/iotweb/site/index.html#/development/automation) section of the Developer Workspace and create an Automation.
+6. Go to the [Automation](https://devworkspace.developer.samsung.com/smartthingsconsole/iotweb/site/#/app/develop/automation)
+   section of the Developer Workspace and create an Automation.
 	- For the **SmartApp Type** select **WebHook endpoint** and enter the https URL you copied from the above step.
 	- For the **Scopes**, click on the **Add** button and select the following scopes:
 		- `r:devices:*`
