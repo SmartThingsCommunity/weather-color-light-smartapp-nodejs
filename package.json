@@ -17,18 +17,17 @@
   "author": "SmartThings",
   "license": "Apache-2.0",
   "dependencies": {
-    "ava": "^0.23.0",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "fs": "0.0.1-security",
     "http-signature": "^1.1.1",
     "prettyjson": "^1.2.1",
-    "request": "^2.81.0",
+    "request": "^2.88.0",
     "request-promise": "^4.2.1",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.23.0"
+    "ava": "^2.1.0"
   }
 }
