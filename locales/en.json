@@ -1,0 +1,10 @@
+{
+	"pages.mainPage.name": "Weather Color Lights",
+	"pages.mainPage.sections.forecast.name": "For the temperature in this US zip code",
+	"pages.mainPage.settings.zipCode.name": "Zip Code",
+	"Tap to set": "Tap to set",
+	"pages.mainPage.settings.forecastInterval.name": "How many hours in the future to check?",
+	"pages.mainPage.settings.scheduleInterval.name": "How often to check forecast?",
+	"pages.mainPage.sections.lights.name": "Set the color of this light",
+	"pages.mainPage.settings.colorLight.name": "Which color light"
+}
