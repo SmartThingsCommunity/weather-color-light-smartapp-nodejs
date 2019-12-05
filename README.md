@@ -25,7 +25,9 @@ This WebHook SmartApp showcases:
 
 1. Clone or download this repository.
 
-2. Create an API key with [Open Weather Map](https://api.openweathermap.org) (free tier is fine), and store it in an environment variable named `WEATHER_API_KEY`.
+2. Create an API key at [Open Weather Map](https://api.openweathermap.org) (free tier is fine). 
+
+1. Create a `.env` and store your API key as shown in `.env.example` file.
 
 3. Install the dependencies for this app: `npm install`.
 
@@ -33,11 +35,13 @@ This WebHook SmartApp showcases:
 
 5. Start ngrok (in another terminal window/tab): `ngrok http 3005`. Copy the `https:` URL to your clipboard.
 
-6. Go to the [Automation](https://devworkspace.developer.samsung.com/smartthingsconsole/iotweb/site/index.html#/development/automation) section of the Developer Workspace and create an Automation.
-	- For the **SmartApp Type** select **WebHook endpoint** and enter the https URL you copied from the above step.
-	- For the **Scopes**, click on the **Add** button and select the following scopes:
+6. At the [Developer Workspace](https://smartthings.developer.samsung.com/workspace) create an **Automation** project.
+	- Register your Automation SmartApp as a WebHook with the `https:` previously copied.
+	- From the scopes list, select the next ones:
 		- `r:devices:*`
 		- `x:devices:*`
+		- `i:deviceprofiles:*`
+		- `r:locations:*`
 	- Click **SAVE AND NEXT**.
 	- In the next screen you will be presented with the **Public Key**.
 
@@ -45,7 +49,7 @@ This WebHook SmartApp showcases:
 
 8. Click **CONFIRM** to register your automation in self-publishing mode.
 
-9. Install the SmartApp in the SmartThings mobile app (go to Marketplace->SmartApps->My Apps->Example Weather Color Light.
+9. Install the SmartApp in the SmartThings mobile app (**If you're using *Classic* app**: go to Marketplace->SmartApps->My Apps->Example Weather Color Light).
 
 10. Enter all required inputs on the configuration screens.
 
