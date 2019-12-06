@@ -17,6 +17,7 @@
   "author": "SmartThings",
   "license": "Apache-2.0",
   "dependencies": {
+    "@smartthings/smartapp": "^1.13.2",
     "bluebird": "^3.5.5",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
