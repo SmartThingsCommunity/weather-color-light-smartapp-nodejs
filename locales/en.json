@@ -6,5 +6,13 @@
 	"pages.mainPage.settings.forecastInterval.name": "How many hours in the future to check?",
 	"pages.mainPage.settings.scheduleInterval.name": "How often to check forecast?",
 	"pages.mainPage.sections.lights.name": "Set the color of this light",
-	"pages.mainPage.settings.colorLight.name": "Which color light"
+	"pages.mainPage.settings.colorLight.name": "Which color light",
+	"pages.mainPage.settings.forecastInterval.options.3 Hours.name": "3 Hours",
+	"pages.mainPage.settings.forecastInterval.options.6 Hours.name": "6 Hours",
+	"pages.mainPage.settings.forecastInterval.options.9 Hours.name": "9 Hours",
+	"pages.mainPage.settings.forecastInterval.options.12 Hours.name": "12 Hours",
+	"pages.mainPage.settings.scheduleInterval.options.15 Minutes.name": "15 Minutes",
+	"pages.mainPage.settings.scheduleInterval.options.30 Minutes.name": "30 Minutes",
+	"pages.mainPage.settings.scheduleInterval.options.45 Minutes.name": "45 Minutes",
+	"pages.mainPage.settings.scheduleInterval.options.60 Minutes.name": "60 Minutes"
 }

@@ -15,49 +15,46 @@ This WebHook SmartApp showcases:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) and [npm](https://npmjs.com) installed (verified with npm version 4.0.5 and Node 7.4.0).
+- [Node.js](https://nodejs.org) and [npm](https://npmjs.com) installed (verified with npm version 6.14.8 and Node 12.19.0).
 - [ngrok](https://ngrok.com/) installed to create a secure tunnel to create a globally available URL for fast testing.
 - A [Samsung account](https://account.samsung.com/membership/index.do) and the SmartThings mobile application.
 - A SmartThings-compatible color bulb, such as SYLVANIA Smart RGBW or LIFX, or Phillips Hue.
-- Make sure you open an account (it is free) on [Developer Workspace](https://devworkspace.developer.samsung.com/smartthingsconsole/iotweb/site/index.html#/home).
+- Make sure you open an account (it is free) on [Developer Workspace](https://smartthings.developer.samsung.com/workspace/).
 
 ### Steps
 
 1. Clone or download this repository.
 
-2. Create an API key at [Open Weather Map](https://api.openweathermap.org) (free tier is fine). 
+1. Create an API key at [Open Weather Map](https://api.openweathermap.org) (free tier is fine). 
 
-1. Create a `.env` and store your API key as shown in `.env.example` file.
+1. Create a `.env` and store your OpenWeather API key as shown in `.env.example` file.
 
-3. Install the dependencies for this app: `npm install`.
+1. Install the dependencies for this app: `npm install`.
 
-4. Start the server: `npm start`.
+1. Start the server: `npm start`.
 
-5. Start ngrok (in another terminal window/tab): `ngrok http 3005`. Copy the `https:` URL to your clipboard.
+1. Start ngrok (in another terminal window/tab): `ngrok http 3005`. Copy the `https:` URL to your clipboard.
 
-6. At the [Developer Workspace](https://smartthings.developer.samsung.com/workspace) create an **Automation** project.
+1. At the [Developer Workspace](https://smartthings.developer.samsung.com/workspace) create an **Automation** project.
 	- Register your Automation SmartApp as a WebHook with the `https:` previously copied.
 	- From the scopes list, select the next ones:
 		- `r:devices:*`
 		- `x:devices:*`
-		- `i:deviceprofiles:*`
-		- `r:locations:*`
 	- Click **SAVE AND NEXT**.
-	- In the next screen you will be presented with the **Public Key**.
 
-7. Copy this public key and replace the contents of the file `config/smartthings_rsa.pub` with it.
+1. A `CONFIRMATION request` log should show in the log output of the local server. Navigate to this link to register the app to receive events.
 
-8. Click **CONFIRM** to register your automation in self-publishing mode.
+1. Click **Deploy to Test** in Developer Workspace App `Overview` to register your automation in self-publishing mode.
 
-9. Install the SmartApp in the SmartThings mobile app (**If you're using *Classic* app**: go to Marketplace->SmartApps->My Apps->Example Weather Color Light).
+1. Install the SmartApp in the SmartThings mobile app after [enabling developer mode](https://smartthings.developer.samsung.com/docs/testing/how-to-test.html#Test-your-Automation).
 
-10. Enter all required inputs on the configuration screens.
+1. Enter all required inputs on the configuration screens.
 
-11. Once installed, the configured bulb will turn on and its color will either be purple (if precipitation is in the forecast), orange (if the forecast calls for temperatures above 80 degrees Fahrenheit), blue (if the forecast calls for temperatures below 50 degrees Fahrenheit), or white (if no precipitation and temperature between 50 and 80 degrees Fahrenheit). It will check the current weather at the interval set during installation.
+1. Once installed, the configured bulb will turn on and its color will either be purple (if precipitation is in the forecast), orange (if the forecast calls for temperatures above 80 degrees Fahrenheit), blue (if the forecast calls for temperatures below 50 degrees Fahrenheit), or white (if no precipitation and temperature between 50 and 80 degrees Fahrenheit). It will check the current weather at the interval set during installation.
 
 ## Troubleshooting
 
-- When you try to install the SmartApp in the SmartThings mobile app if you get an error **Something went wrong. Please try to install the SmartApp again**, then it is possible that you did not restart the npm server as specified in Step 10 above. If this is the case, then in the npm server terminal you will also see this error: `forbidden - failed verifySignature`. Make sure you restart the npm server by doing Step 10 above.
+- When you try to install the SmartApp in the SmartThings mobile app if you get an error **Something went wrong. Please try to install the SmartApp again**, then it is possible that you did not navigate to the registration link as specified above. If this is the case, then in the npm server terminal you will also see an error. Make sure you navigate to the URL sent with the `CONFIRMATION request` to the npm server. This can be resent by navigating to Developer Workspace `Overview` and clicking `Verify App Registration`.
 
 ## Documentation
 

@@ -1,10 +1,31 @@
 require('dotenv').config();
 const express = require('express');
 const SmartApp = require('@smartthings/smartapp');
-const fs = require('fs');
 const weather = require('./lib/weather');
 const server = express();
 const PORT = process.env.PORT || 3005;
+
+
+async function setColor(ctx) {
+  const forecast = await weather.getForecast(ctx.configStringValue('zipCode'));
+  const color = weather.getColorForForecast(forecast, ctx.configNumberValue('forecastInterval'));
+  return ctx.api.devices.sendCommands(ctx.config.colorLight, [
+      {
+          capability: 'switch',
+          command: 'on'
+      },
+      {
+          capability: 'switchLevel',
+          command: 'setLevel',
+          arguments: [20]
+      },
+      {
+          capability: 'colorControl',
+          command: 'setColor',
+          arguments: [color]
+      }
+  ]);
+}
 
 const smartapp = new SmartApp()
     .configureI18n()
@@ -12,53 +33,41 @@ const smartapp = new SmartApp()
     .page('mainPage', (context, page, configData) => {
       page.section('forecast', section => {
         section.numberSetting('zipCode')
-        section.enumSetting('forecastInterval').options([
-          {id: "1", name: "3 Hours"},
-          {id: "2", name: "6 Hours"},
-          {id: "3", name: "9 Hours"},
-          {id: "4", name: "12 Hours"}
-        ]);
-        section.enumSetting('scheduleInterval').options([
-          {id: "15", name: "15 Minutes"},
-          {id: "30", name: "30 Minutes"},
-          {id: "45", name: "45 Minutes"},
-          {id: "60", name: "60 Minutes"}
-        ]);
+            .required(true)
+        section.enumSetting('forecastInterval')
+            .options([
+              {id: "1", name: "3 Hours"},
+              {id: "2", name: "6 Hours"},
+              {id: "3", name: "9 Hours"},
+              {id: "4", name: "12 Hours"}
+            ])
+            .defaultValue("1");
+        section.enumSetting('scheduleInterval')
+            .options([
+              {id: "15", name: "15 Minutes"},
+              {id: "30", name: "30 Minutes"},
+              {id: "45", name: "45 Minutes"},
+              {id: "60", name: "60 Minutes"}
+            ])
+            .defaultValue("15");
       });
       page.section('lights', section => {
         section.deviceSetting('colorLight')
             .capabilities(['colorControl', 'switch', 'switchLevel'])
             .permissions('rx')
+            .required(true)
       });
     })
     .updated(async ctx => {
-      await ctx.api.schedules.unscheduleAll();
-      return ctx.api.schedules.schedule('weatherHandler', `0/${ctx.configStringValue('scheduleInterval')} * * * ? *`);
-    })
-    .scheduledEventHandler('weatherHandler', async ctx => {
-      const forecast = await weather.getForecast(ctx.configStringValue('zipCode'));
-      const color = weather.getColorForForecast(forecast, ctx.configNumberValue('forecastInterval'));
-      return ctx.api.devices.sendCommands(ctx.config.colorLight, [
-          {
-              capability: 'switch',
-              command: 'on'
-          },
-          {
-              capability: 'switchLevel',
-              command: 'setLevel',
-              arguments: [20]
-          },
-          {
-              capability: 'colorControl',
-              command: 'setColor',
-              arguments: [color]
-          }
-      ]);
-    });
+      await ctx.api.schedules.delete();
 
-if (fs.existsSync('./config/smartthings_rsa.pub')) {
-    smartapp.publicKey('@config/smartthings_rsa.pub');
-}
+      // switch light on to initial color
+      await setColor(ctx);
+
+      // schedule future changes
+      return ctx.api.schedules.schedule('weatherHandler', `0/${ctx.configStringValue('scheduleInterval')} * * * ? *`, 'UTC');
+    })
+    .scheduledEventHandler('weatherHandler', setColor);
 
 server.use(express.json());
 server.post('/', (req, res, next) => {

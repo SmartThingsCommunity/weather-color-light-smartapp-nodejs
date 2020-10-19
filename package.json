@@ -17,19 +17,13 @@
   "author": "SmartThings",
   "license": "Apache-2.0",
   "dependencies": {
-    "@smartthings/smartapp": "^1.13.2",
-    "bluebird": "^3.5.5",
-    "body-parser": "^1.19.0",
+    "@smartthings/smartapp": "^2.4.2",
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "http-signature": "^1.1.1",
-    "prettyjson": "^1.2.1",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "supertest": "^3.4.2"
+    "prettyjson": "^1.2.1"
   },
   "devDependencies": {
-    "ava": "^2.1.0"
+    "ava": "^3.13.0"
   }
 }
