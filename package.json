@@ -1,5 +1,5 @@
 {
-  "name": "weather-color-light-SmartApp",
+  "name": "weather-color-light-smartapp",
   "version": "1.0.0",
   "description": "sample SmartThings webhook SmartApp",
   "repository": "https://github.com/SmartThingsCommunity/weather-color-light-smartapp-nodejs",
@@ -17,7 +17,7 @@
   "author": "SmartThings",
   "license": "Apache-2.0",
   "dependencies": {
-    "@smartthings/smartapp": "^2.4.2",
+    "@smartthings/smartapp": "^2.4.3",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "ava": "^3.13.0"
+  },
+  "engines": {
+    "node": "^12"
   }
 }
