@@ -1,0 +1,33 @@
+service: weather-color-light
+
+frameworkVersion: "2"
+
+package:
+  include:
+    - index.js
+    - smartapp.js
+    - constants/**
+    - lib/**
+    - locales/**
+  exclude:
+    - .git/**
+    - .gitignore
+    - .env*
+    - CONTRIBUTING.md
+    - config/**
+    - test/**
+    - server.js
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+
+  # replace with closest region to your geographic location for ideal latency
+  # see: https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
+  region: us-east-1 
+
+functions:
+  smartapp:
+    handler: index.handle
+    timeout: 10
