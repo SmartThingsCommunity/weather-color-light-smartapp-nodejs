@@ -1,7 +1,7 @@
 {
   "name": "weather-color-light-smartapp",
   "version": "1.0.0",
-  "description": "sample SmartThings webhook SmartApp",
+  "description": "Set the color of a light based on the weather",
   "repository": "https://github.com/SmartThingsCommunity/weather-color-light-smartapp-nodejs",
   "main": "server.js",
   "ava": {
@@ -20,11 +20,12 @@
     "@smartthings/smartapp": "^2.4.3",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
     "prettyjson": "^1.2.1"
   },
   "devDependencies": {
-    "ava": "^3.13.0"
+    "ava": "^3.13.0",
+    "express": "^4.17.1",
+    "serverless": "^2.15.0"
   },
   "engines": {
     "node": "^12"
