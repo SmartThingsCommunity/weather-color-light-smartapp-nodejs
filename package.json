@@ -18,7 +18,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@smartthings/smartapp": "^2.4.3",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "prettyjson": "^1.2.1"
   },
