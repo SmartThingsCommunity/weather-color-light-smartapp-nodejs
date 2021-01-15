@@ -29,7 +29,7 @@ We've provided two options: the intended deployment platform for this automation
 
 Clone or download this repository and follow the desired option.
 
-### Lambda
+#### Lambda
 
 1. Install the dependencies for this app: `npm install`.
 
@@ -41,7 +41,7 @@ Clone or download this repository and follow the desired option.
 
 1. Follow the steps to grant SmartThings [permission to execute your Lambda function](https://smartthings.developer.samsung.com/docs/smartapps/aws-lambda.html). **This is required for successful registration.**
 
-### Local
+#### Local
 
 1. Create a `.env` and store your OpenWeather API key as shown in `.env.example` file.
 
@@ -53,10 +53,11 @@ Clone or download this repository and follow the desired option.
 
 ### Register
 
-1. Follow the instructions for [registering a SmartApp](https://smartthings.developer.samsung.com/docs/smartapps/app-registration.html) with the SmartThings platform.
-	- The following OAuth2 scopes are required.
-		- `r:devices:*`
-		- `x:devices:*`
+Follow the instructions for [registering a SmartApp](https://smartthings.developer.samsung.com/docs/smartapps/app-registration.html) with the SmartThings platform.
+
+- The following OAuth2 scopes are required.
+	- `r:devices:*`
+	- `x:devices:*`
 
 #### Local Only
 
