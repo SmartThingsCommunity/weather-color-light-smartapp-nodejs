@@ -17,17 +17,17 @@
   "author": "SmartThings",
   "license": "Apache-2.0",
   "dependencies": {
-    "@smartthings/smartapp": "^2.4.4",
+    "@smartthings/smartapp": "^2.5.2",
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "prettyjson": "^1.2.1"
   },
   "devDependencies": {
     "ava": "^3.15.0",
     "express": "^4.17.1",
-    "serverless": "^2.19.0"
+    "serverless": "^2.43.1"
   },
   "engines": {
-    "node": "^12"
+    "node": "^12 || ^14"
   }
 }
