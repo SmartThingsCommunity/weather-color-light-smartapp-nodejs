@@ -20,7 +20,7 @@ package:
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   stage: dev
 
   # replace with closest region to your geographic location for ideal latency
