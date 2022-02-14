@@ -1,6 +1,6 @@
 service: weather-color-light
 
-frameworkVersion: "2"
+frameworkVersion: "3"
 
 package:
   include:
