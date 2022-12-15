@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "ava": "^4.0.1",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "serverless": "^3.2.1"
   },
   "engines": {
